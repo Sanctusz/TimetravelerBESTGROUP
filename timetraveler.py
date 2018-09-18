@@ -1,11 +1,12 @@
-#nswe
-tilematrix = ["n","nse","se","we","sw","n","sw","ns","n"]
+#news
+tilematrix = ["n","nes","es","ew","ws","n","ws","ns","n"]
 n = 0
 m = 0
 diravailable = ''
 
 for i in tilematrix:
     diravailable = ''
+    m = 0
     for j in tilematrix[n]:
         if j == "n":
             diravailable = "You can travel: (N)orth"
@@ -27,4 +28,3 @@ for i in tilematrix:
         m += 1
     n += 1
     print(diravailable)
-
