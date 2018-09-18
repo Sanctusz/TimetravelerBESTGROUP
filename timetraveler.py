@@ -11,7 +11,31 @@ n = 0 #location of player
 m = 0 #
 diravailable = ''
 
+for i in tilematrix:
+        diravailable = ''
+        m = 0
+        for j in tilematrix[n]:
+            if j == "n":
+                diravailable = "You can travel: (N)orth"
+            elif j == "s":
+                if m == 0:
+                    diravailable = "You can travel: (S)outh"
+                else:
+                    diravailable += " or (South)"
+            elif j == "w":
+                if m == 0:
+                    diravailable = "You can travel: (W)est"
+                else:
+                    diravailable += " or (W)est"
+            elif j == "e":
+                if m == 0:
+                    diravailable = "You can travel: (E)east"
+                else:
+                    diravailable += " or (E)ast"
+            m += 1
+
 while n != 6:
+    print(diravailable)
     way = input("Direction: ")
     if way in tilematrix[n]:
         if way == "n":
