@@ -20,20 +20,17 @@ for i in tilematrix:
             if m == 1:
                 diravailable = "You can travel: (S)outh"
             else:
-                diravailable += diravailable + "or (South)"
+                diravailable += " or (South)"
         elif j == "w":
             if m == 1:
                 diravailable = "You can travel: (W)est"
             else:
-                diravailable += diravailable + "or (W)est"
+                diravailable += " or (W)est"
         else:
             if m == 1:
                 diravailable = "You can travel: (E)east"
             else:
-                diravailable += diravailable + "or (E)ast"
-    n += 1
-
-for i in range(0,9):
+                diravailable += " or (E)ast"
     n += 1
     print(diravailable)
 
