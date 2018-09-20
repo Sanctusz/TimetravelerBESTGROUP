@@ -17,15 +17,15 @@ W = -3
 S = -1
 '''
 
-timematrix = ("n nes es n ws ew n ns ws")
+timematrix = ("n nes es n ws ew n ns ws") # all available directions player can go
 
-timematrix_split = timematrix.split()
+timematrix_split = timematrix.split() #changing string into list
 
 n = 0 #location of player
-m = 0 #
-diravailable = ''
+m = 0 #checks the contest of diravailable
+diravailable = '' #creating new string
 
-for i in timematrix_split:
+for i in timematrix_split: #for loop thats checks which direction player can travel
         diravailable = ''
         m = 0
         for j in timematrix_split[n]:
@@ -48,7 +48,7 @@ for i in timematrix_split:
                     diravailable += " or (E)ast"
             m += 1
 
-while n != 6:
+while n != 6: #while loop thats check the position of a player and updates it.
     print(diravailable)
     way = input("Direction: ")
     if way in timematrix_split[n]:
@@ -63,7 +63,7 @@ while n != 6:
     if n == 6:
         print("WINNER!")
         break
-    for i in timematrix_split:
+    for i in timematrix_split: #foor loop that checks the updated player position 
         diravailable = ''
         m = 0
         for j in timematrix_split[n]:
