@@ -63,7 +63,7 @@ while n != 6: #while loop thats check the position of a player and updates it.
     if n == 6:
         print("WINNER!")
         break
-    for i in timematrix_split: #foor loop that checks the updated player position 
+    for i in timematrix_split: #for loop that checks the updated player position 
         diravailable = ''
         m = 0
         for j in timematrix_split[n]:
