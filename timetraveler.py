@@ -1,4 +1,15 @@
-#news
+""" 
+To solve the tile traveler problem we first needed to look at it from x and y axis perspective.
+The grid 3x3 so the player can travel at most +3 or -3 back
+Therefore n+=3, n-=3. But because of wall we had to take into consideration that player may only be able to move 
+n +=1 and n -= 1
+Every tile on the has different cordinates and different possible ways to go. 
+We have to mark the possition of a player then put it into a loop so we can be updated on the possition player 
+is on the grid.
+the winning tile would have number 6 as player has to go +1(north) +1 (north) +3 (east) +3(east) -1(south) -1(south)
+which equal 6.
+
+ """
 '''
 N = +1
 E = +3
