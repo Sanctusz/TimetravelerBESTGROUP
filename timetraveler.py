@@ -25,7 +25,7 @@ n = 0 #location of player
 m = 0 #checks the contest of diravailable
 diravailable = '' #creating new string
 
-for i in timematrix_split: #for loop thats checks which direction player can travel
+for i in timematrix_split: #for loop that checks which directions player can travel
         diravailable = ''
         m = 0
         for j in timematrix_split[n]:
