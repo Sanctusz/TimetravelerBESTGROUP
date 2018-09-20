@@ -52,14 +52,15 @@ def print_available_directions(available_directions):
 
 def play():
 
-    tilematrix = ["n","nes","es","n","ws","ew","n","ns","ws"]
+    tilematrix = ("n nes es n ws ew n ns ws")
+    tilematrix_split = tilematrix.split()
     location = 0
 
     while True:
-        print_available_directions(tilematrix[location])
+        print_available_directions(tilematrix_split[location])
 
         direction = input("Direction: ")
-        location = move(tilematrix[location], location, direction)
+        location = move(tilematrix_split[location], location, direction)
 
         if is_winner(location):
             print("WINNER!")
