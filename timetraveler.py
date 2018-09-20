@@ -6,15 +6,18 @@ W = -3
 S = -1
 '''
 
-tilematrix = ["n","nes","es","n","ws","ew","n","ns","ws"]
+timematrix = ("n nes es n ws ew n ns ws")
+
+timematrix_split = timematrix.split()
+
 n = 0 #location of player
 m = 0 #
 diravailable = ''
 
-for i in tilematrix:
+for i in timematrix_split:
         diravailable = ''
         m = 0
-        for j in tilematrix[n]:
+        for j in timematrix_split[n]:
             if j == "n":
                 diravailable = "You can travel: (N)orth"
             elif j == "s":
@@ -37,7 +40,7 @@ for i in tilematrix:
 while n != 6:
     print(diravailable)
     way = input("Direction: ")
-    if way in tilematrix[n]:
+    if way in timematrix_split[n]:
         if way == "n":
             n += 1
         elif way == "e":
@@ -49,10 +52,10 @@ while n != 6:
     if n == 6:
         print("WINNER!")
         break
-    for i in tilematrix:
+    for i in timematrix_split:
         diravailable = ''
         m = 0
-        for j in tilematrix[n]:
+        for j in timematrix_split[n]:
             if j == "n":
                 diravailable = "You can travel: (N)orth"
             elif j == "s":
