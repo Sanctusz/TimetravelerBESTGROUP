@@ -6,7 +6,7 @@ W = -3
 S = -1
 '''
 
-def move(available_directions, location, direction):
+def move(available_directions, location, direction): # function that moves the player and returns current location
     direction = direction.lower()
     if direction in available_directions:
         if direction == "n":
@@ -20,12 +20,12 @@ def move(available_directions, location, direction):
 
     return location
 
-def is_winner(location):
+def is_winner(location): #if location == 6 then we have a winner.
     if location == 6:
         return True
     return False
 
-def print_available_directions(available_directions):
+def print_available_directions(available_directions): #function checking all available direction player can move to
     text = ''
     first = True
 
@@ -50,7 +50,7 @@ def print_available_directions(available_directions):
         first = False
     print(text)
 
-def play():
+def play(): # function with a while loop that's allows us to play the game and puts other functions to use.
 
     tilematrix = ("n nes es n ws ew n ns ws")
     tilematrix_split = tilematrix.split()
