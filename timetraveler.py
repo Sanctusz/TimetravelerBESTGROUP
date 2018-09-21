@@ -26,11 +26,12 @@ timematrix = "n nes es n ws ew n ns ws" # all available directions player can go
 
 timematrix_split = timematrix.split() #changing string into list
 
-n = 0 #location of player
-m = 0 #checks the contest of diravailable
-diravailable = '' #creating new string
+#create our variables
+n = 0 
+m = 0 
+diravailable = '' 
 
-for i in timematrix_split: #for loop that checks which directions player can travel
+for i in timematrix_split: #for loop outputs possible routes the player can take. Need one outside the loop in the beginning.
         diravailable = ''
         m = 0
         for j in timematrix_split[n]:
@@ -68,7 +69,7 @@ while n != 6: #while loop thats check the position of a player and updates it.
     if n == 6:
         print("Victory!")
         break
-    for i in timematrix_split: #for loop that checks the updated player position 
+    for i in timematrix_split: #for loop outputs possible routes the player can take
         diravailable = ''
         m = 0
         for j in timematrix_split[n]:
