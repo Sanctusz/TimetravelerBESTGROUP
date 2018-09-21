@@ -20,6 +20,8 @@ N = +1
 E = +3
 W = -3
 S = -1
+
+github rep : https://github.com/Sanctusz/TimetravelerBESTGROUP.git
 '''
 
 tilematrix = "n nes es n sw ew 1 ns sw" # all available directions player can go

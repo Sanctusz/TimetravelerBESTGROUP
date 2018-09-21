@@ -24,6 +24,8 @@ N = +1
 E = +3
 W = -3
 S = -1
+
+github rep : https://github.com/Sanctusz/TimetravelerBESTGROUP.git
 '''
 
 def move(available_directions, location, direction): #Function that moves the player and returns current location
