@@ -22,7 +22,7 @@ W = -3
 S = -1
 '''
 
-timematrix = "n nes es n ws ew n ns ws" # all available directions player can go
+timematrix = "n nes es n sw ew 1 ns sw" # all available directions player can go
 
 timematrix_split = timematrix.split() #changing string into list
 
@@ -53,10 +53,10 @@ for i in timematrix_split: #for loop outputs possible routes the player can take
                 else:
                     diravailable += " or (E)ast"
             m += 1
+print(diravailable + '.')
 
 while n != 6: #while loop thats check the position of a player and updates it.
-    print(diravailable)
-    way = input("Direction: ")
+    way = input("Direction: ").lower()
     if way in timematrix_split[n]:
         if way == "n":
             n += 1
@@ -66,28 +66,31 @@ while n != 6: #while loop thats check the position of a player and updates it.
             n -= 3
         elif way == "s":
             n -= 1
-    if n == 6:
-        print("Victory!")
-        break
-    for i in timematrix_split: #for loop outputs possible routes the player can take
-        diravailable = ''
-        m = 0
-        for j in timematrix_split[n]:
-            if j == "n":
-                diravailable = "You can travel: (N)orth"
-            elif j == "s":
-                if m == 0:
-                    diravailable = "You can travel: (S)outh"
-                else:
-                    diravailable += " or (South)"
-            elif j == "w":
-                if m == 0:
-                    diravailable = "You can travel: (W)est"
-                else:
-                    diravailable += " or (W)est"
-            elif j == "e":
-                if m == 0:
-                    diravailable = "You can travel: (E)east"
-                else:
-                    diravailable += " or (E)ast"
-            m += 1
+        for i in timematrix_split: #for loop outputs possible routes the player can take
+            diravailable = ''
+            m = 0
+            for j in timematrix_split[n]:
+                if j == "n":
+                    diravailable = "You can travel: (N)orth"
+                elif j == "s":
+                    if m == 0:
+                        diravailable = "You can travel: (S)outh"
+                    else:
+                        diravailable += " or (S)outh"
+                elif j == "w":
+                    if m == 0:
+                        diravailable = "You can travel: (W)est"
+                    else:
+                        diravailable += " or (W)est"
+                elif j == "e":
+                    if m == 0:
+                        diravailable = "You can travel: (E)ast"
+                    else:
+                        diravailable += " or (E)ast"
+                m += 1
+        if n == 6:
+            print("Victory!")
+            break
+        print(diravailable + '.')
+    else:
+        print("Not a valid direction!")
