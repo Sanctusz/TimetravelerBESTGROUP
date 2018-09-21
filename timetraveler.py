@@ -22,19 +22,19 @@ W = -3
 S = -1
 '''
 
-timematrix = "n nes es n sw ew 1 ns sw" # all available directions player can go
+tilematrix = "n nes es n sw ew 1 ns sw" # all available directions player can go
 
-timematrix_split = timematrix.split() #changing string into list
+tilematrix_split = tilematrix.split() #changing string into list
 
 #create our variables
 n = 0 
 m = 0 
 diravailable = '' 
 
-for i in timematrix_split: #for loop outputs possible routes the player can take. Need one outside the loop in the beginning.
+for i in tilematrix_split: #for loop outputs possible routes the player can take. Need one outside the loop in the beginning.
         diravailable = ''
         m = 0
-        for j in timematrix_split[n]:
+        for j in tilematrix_split[n]:
             if j == "n":
                 diravailable = "You can travel: (N)orth"
             elif j == "s":
@@ -57,7 +57,7 @@ print(diravailable + '.')
 
 while n != 6: #while loop thats check the position of a player and updates it.
     way = input("Direction: ").lower()
-    if way in timematrix_split[n]:
+    if way in tilematrix_split[n]:
         if way == "n":
             n += 1
         elif way == "e":
@@ -66,10 +66,10 @@ while n != 6: #while loop thats check the position of a player and updates it.
             n -= 3
         elif way == "s":
             n -= 1
-        for i in timematrix_split: #for loop outputs possible routes the player can take
+        for i in tilematrix_split: #for loop outputs possible routes the player can take
             diravailable = ''
             m = 0
-            for j in timematrix_split[n]:
+            for j in tilematrix_split[n]:
                 if j == "n":
                     diravailable = "You can travel: (N)orth"
                 elif j == "s":
