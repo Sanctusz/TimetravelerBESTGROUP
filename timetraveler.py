@@ -1,23 +1,28 @@
-""" 
-To solve the tile traveler problem we first needed to look at it from x and y axis perspective.
-The grid 3x3 so the player can travel at most +3 or -3 back
-Therefore n+=3, n-=3. But because of wall we had to take into consideration that player may only be able to move 
-n +=1 and n -= 1
-Every tile on the has different cordinates and different possible ways to go. 
-We have to mark the possition of a player then put it into a loop so we can be updated on the possition player 
-is on the grid.
-the winning tile would have number 6 as player has to go +1(north) +1 (north) +3 (east) +3(east) -1(south) -1(south)
-which equal 6.
-
- """
 '''
+Hópur 2:
+Anna Dóra Aldísardóttir
+Gözde Sigurðs
+Izabela Kinga Nieradko
+Jóhann Sveinn Ingason
+Marinó Guðmundsson
+
+You need to get to point 6 in the list.
+You start at point 0.
+When you go North you go up 1 slot in the list.
+When you go East you go up 3 slots in the list.
+When you go West you go down 3 slots in the list.
+When you go South you go down 1 slot in the list.
+There are walls which you can't go through.
+If you try and go into a direction you can't go then you get an error.
+Find your way through the maze.
+
 N = +1
 E = +3
 W = -3
 S = -1
 '''
 
-timematrix = ("n nes es n ws ew n ns ws") # all available directions player can go
+timematrix = "n nes es n ws ew n ns ws" # all available directions player can go
 
 timematrix_split = timematrix.split() #changing string into list
 
@@ -61,7 +66,7 @@ while n != 6: #while loop thats check the position of a player and updates it.
         elif way == "s":
             n -= 1
     if n == 6:
-        print("WINNER!")
+        print("Victory!")
         break
     for i in timematrix_split: #for loop that checks the updated player position 
         diravailable = ''
@@ -85,5 +90,3 @@ while n != 6: #while loop thats check the position of a player and updates it.
                 else:
                     diravailable += " or (E)ast"
             m += 1
-        #n += 1
-        #print(diravailable)
