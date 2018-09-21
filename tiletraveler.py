@@ -73,14 +73,14 @@ def print_available_directions(available_directions, moved): #function checking 
                     text += " or (W)est"
             elif direction == "e":
                 if first:
-                    text = "You can travel: (E)east"
+                    text = "You can travel: (E)ast"
                 else:
                     text += " or (E)ast"
             first = False
         print(text + '.')
 
 def play(): #function with a while loop that allows us to play the game and puts other functions to use.
-    tilematrix = "n nes es n ws ew n ns ws"
+    tilematrix = "n nes es n sw ew n ns sw"
     tilematrix_split = tilematrix.split()
     location = 0
     print_available_directions(tilematrix_split[location], True) #print starting location
