@@ -6,6 +6,8 @@ Izabela Kinga Nieradko
 Jóhann Sveinn Ingason
 Marinó Guðmundsson
 
+github repo: https://github.com/Sanctusz/TimetravelerBESTGROUP.git
+
 You need to get to point 6 in the list.
 You start at point 0.
 When you go North you go up 1 slot in the list.
@@ -18,10 +20,8 @@ Find your way through the maze.
 
 N = +1
 E = +3
-W = -3
 S = -1
-
-github rep : https://github.com/Sanctusz/TimetravelerBESTGROUP.git
+W = -3
 '''
 
 tilematrix = "n nes es n sw ew 1 ns sw" # all available directions player can go
@@ -34,27 +34,27 @@ m = 0
 diravailable = '' 
 
 for i in tilematrix_split: #for loop outputs possible routes the player can take. Need one outside the loop in the beginning.
-        diravailable = ''
-        m = 0
-        for j in tilematrix_split[n]:
-            if j == "n":
-                diravailable = "You can travel: (N)orth"
-            elif j == "s":
-                if m == 0:
-                    diravailable = "You can travel: (S)outh"
-                else:
-                    diravailable += " or (South)"
-            elif j == "w":
-                if m == 0:
-                    diravailable = "You can travel: (W)est"
-                else:
-                    diravailable += " or (W)est"
-            elif j == "e":
-                if m == 0:
-                    diravailable = "You can travel: (E)east"
-                else:
-                    diravailable += " or (E)ast"
-            m += 1
+    diravailable = ''
+    m = 0
+    for j in tilematrix_split[n]:
+        if j == "n":
+            diravailable = "You can travel: (N)orth"
+        elif j == "s":
+            if m == 0:
+                diravailable = "You can travel: (S)outh"
+            else:
+                diravailable += " or (South)"
+        elif j == "w":
+            if m == 0:
+                diravailable = "You can travel: (W)est"
+            else:
+                diravailable += " or (W)est"
+        elif j == "e":
+            if m == 0:
+                diravailable = "You can travel: (E)east"
+            else:
+                diravailable += " or (E)ast"
+        m += 1
 print(diravailable + '.')
 
 while n != 6: #while loop thats check the position of a player and updates it.

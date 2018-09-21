@@ -6,6 +6,8 @@ Izabela Kinga Nieradko
 Jóhann Sveinn Ingason
 Marinó Guðmundsson
 
+github repo: https://github.com/Sanctusz/TimetravelerBESTGROUP.git
+
 1. Which implementation was easier and why?
     Since it´s based on the first program. Making the second program was
     easier since we already solved the problem, we just improved our solution.
@@ -22,68 +24,75 @@ Marinó Guðmundsson
 
 N = +1
 E = +3
-W = -3
 S = -1
-
-github rep : https://github.com/Sanctusz/TimetravelerBESTGROUP.git
+W = -3
 '''
 
-def move(available_directions, location, direction): #Function that moves the player and returns current location
+def move(available_directions, location, direction, moved): #function that moves the player and returns current location
     direction = direction.lower()
     if direction in available_directions:
         if direction == "n":
             location += 1
+            moved = True
         elif direction == "e":
             location += 3
+            moved = True
         elif direction == "w":
             location -= 3
+            moved = True
         elif direction == "s":
             location -= 1
-    return location
+            moved = True
+    else:
+        moved = False
+        print("Not a valid direction!")
+    return location, moved
 
-def is_winner(location): #If location == 6 then we have a winner.
+def is_winner(location): #if location == 6 then we have a winner.
     if location == 6:
         return True
     return False
 
-def print_available_directions(available_directions): #Function checking all available direction player can move to
+def print_available_directions(available_directions, moved): #function checking all available direction player can move to
     text = ''
     first = True
 
-    for direction in available_directions:
-        if direction == "n":
-            text = "You can travel: (N)orth"
-        elif direction == "s":
-            if first:
-                text = "You can travel: (S)outh"
-            else:
-                text += " or (S)outh"
-        elif direction == "w":
-            if first:
-                text = "You can travel: (W)est"
-            else:
-                text += " or (W)est"
-        elif direction == "e":
-            if first:
-                text = "You can travel: (E)east"
-            else:
-                text += " or (E)ast"
-        first = False
-    print(text)
+    if moved:
+        for direction in available_directions:
+            if direction == "n":
+                text = "You can travel: (N)orth"
+            elif direction == "s":
+                if first:
+                    text = "You can travel: (S)outh"
+                else:
+                    text += " or (S)outh"
+            elif direction == "w":
+                if first:
+                    text = "You can travel: (W)est"
+                else:
+                    text += " or (W)est"
+            elif direction == "e":
+                if first:
+                    text = "You can travel: (E)east"
+                else:
+                    text += " or (E)ast"
+            first = False
+        print(text + '.')
 
-def play(): #Function with a while loop that allows us to play the game and puts other functions to use.
+def play(): #function with a while loop that allows us to play the game and puts other functions to use.
     tilematrix = "n nes es n ws ew n ns ws"
     tilematrix_split = tilematrix.split()
     location = 0
+    print_available_directions(tilematrix_split[location], True) #print starting location
+    moved = False
 
     while True:
-        print_available_directions(tilematrix_split[location])
-
-        direction = input("Direction: ")
-        location = move(tilematrix_split[location], location, direction)
-
         if is_winner(location):
             print("Victory!")
             break
+        print_available_directions(tilematrix_split[location], moved)
+
+        direction = input("Direction: ")
+        location, moved = move(tilematrix_split[location], location, direction, moved)
 
 play()
