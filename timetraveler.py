@@ -6,7 +6,9 @@ W = -3
 S = -1
 '''
 
-tilematrix = ["n","nes","es","n","ws","ew","n","ns","ws"]
+string = "n nes es n ws ew n ns ws"
+tilematrix = string.split(' ')
+#tilematrix = ["n","nes","es","n","ws","ew","n","ns","ws"]
 n = 0 #location of player
 m = 0 #
 diravailable = ''
