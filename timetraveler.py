@@ -24,14 +24,6 @@ S = -1
 W = -3
 '''
 
-<<<<<<< HEAD
-string = "n nes es n ws ew n ns ws"
-tilematrix = string.split(' ')
-#tilematrix = ["n","nes","es","n","ws","ew","n","ns","ws"]
-n = 0 #location of player
-m = 0 #
-diravailable = ''
-=======
 tilematrix = "n nes es n sw ew 1 ns sw" # all available directions player can go
 
 tilematrix_split = tilematrix.split() #changing string into list
@@ -40,7 +32,6 @@ tilematrix_split = tilematrix.split() #changing string into list
 n = 0 
 m = 0 
 diravailable = '' 
->>>>>>> 52efea0515de2d26d964b3daeecab1dd8af88e95
 
 for i in tilematrix_split: #for loop outputs possible routes the player can take. Need one outside the loop in the beginning.
     diravailable = ''
